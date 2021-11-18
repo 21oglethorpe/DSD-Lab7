@@ -14,7 +14,7 @@ module instruction_memory(
       ins_regs[4] <=32’b101100_01010_01000_00001_00000_000000;
     end
     else begin
-      
+      RD <= ins_regs[A];
     end
   end
 endmodule
