@@ -12,28 +12,28 @@ always begin
 end
 
 initial begin
-    rst = 1; #5; rst = 0; #5; rst = 1;
+   rst = 0; #20; rst = 1;
 
     instruction_A = 1;
     RegWrite = 1;
     MemWrite = 0;
     if(prode_data_memory !== 5) $display("test 1 failed.");
-    #5;
+    #20;
     instruction_A = 2;
     RegWrite = 0;
     MemWrite = 1;
     if(prode_data_memory !== 5) $display("test 2 failed.");
-    #5;
+    #20;
     instruction_A = 3;
     RegWrite = 0;
     MemWrite = 0;
     if(prode_register_file !== 7) $display("test 3 failed.");
-    #5;
+    #20;
     instruction_A = 4;
     RegWrite = 0;
     MemWrite = 0;
     if(prode_register_file !== 2) $display("test 4 failed.");
-    #5;
+    #20;
 end
 
 
