@@ -4,7 +4,7 @@ module MUX_MemtoReg(
   input logic[31:0] RD,
   output logic[31:0] MemtoReg_out
 );
-always_comb
+always_comb begin
   if(MemtoReg)      MemtoReg_out <= RD;
   else              MemtoReg_out <= ALUResult;
   end

@@ -4,7 +4,7 @@ module MUX_RegDst(
   input logic[4:0] instr1511,
   output logic[4:0] WriteReg
 );
-always_comb
+always_comb begin
   if(RegDst)      WriteReg <= instr1511;
   else            WriteReg <= instr2016;
   end

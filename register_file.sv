@@ -16,15 +16,14 @@ begin
 			registers[i] <= i;
 		end
 	end
-	else begin
-	if(!WE3) begin
+	else  	if(WE3) 
+			registers[A3] <= WD3;
+
+end
+always_comb begin
+
 		RD1 <= registers[A1];
 		RD2 <= registers[A2];
-	end
-	else begin
-		registers[A3] <= WD3;
-	end
-	end
-end
+		end
 
 endmodule
