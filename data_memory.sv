@@ -8,7 +8,7 @@ output logic[31:0] prode
 );
 
 reg[31:0] registers[31:0];
-assign probe = registers[A];
+assign prode = registers[A];
 always@(posedge clk or negedge rst)
 begin
 	if(!rst) begin
@@ -16,14 +16,13 @@ begin
 			registers[i] <= i;
 		end
 	end
-	else begin
-	  if(WE) begin
+	else if(WE) 
     registers[A] <= WD;
     end
-    else begin
+    always_comb begin
     RD <= registers[A];
     end
     
-	end
-end
+	
+
 endmodule
